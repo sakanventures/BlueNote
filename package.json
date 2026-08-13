@@ -1,0 +1,12 @@
+{
+  "name": "blue-note-invitation",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "preview": "node server.mjs",
+    "check": "node --check app.js && node --check server.mjs"
+  }
+}

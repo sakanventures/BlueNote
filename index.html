@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#cceeff" />
+    <meta
+      name="description"
+      content="A tiny baby-blue invitation with a whole sky full of courage."
+    />
+    <title>One tiny question ☁️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Nunito:wght@700;800;900&amp;display=swap"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%233ab8ff' d='M32 56 8 34C-7 18 15-2 32 17 49-2 71 18 56 34Z'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the invitation</a>
+
+    <div class="sky" aria-hidden="true">
+      <div class="sky__wash"></div>
+      <div class="sky__glow sky__glow--one"></div>
+      <div class="sky__glow sky__glow--two"></div>
+      <div class="stars" id="stars"></div>
+      <div class="cloud-field cloud-field--far" id="clouds-far"></div>
+      <div class="cloud-field cloud-field--near" id="clouds-near"></div>
+      <div class="horizon horizon--back"></div>
+      <div class="horizon horizon--front"></div>
+      <div class="sky__grid"></div>
+      <div class="sky__grain"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#love-card" aria-label="Blue Note invitation, back to card">
+        <span class="brand__mark" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="brand__copy">
+          <strong>BLUE NOTE</strong>
+          <small>sending on cloud nine</small>
+        </span>
+      </a>
+
+      <div class="utility-controls" aria-label="Experience controls">
+        <button class="icon-button" id="motion-toggle" type="button" aria-label="Reduce motion" aria-pressed="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 12h3l2.2-6 4.2 12L16 10l1.5 2H20" />
+          </svg>
+          <span class="utility-label">Motion</span>
+        </button>
+        <button class="icon-button" id="sound-toggle" type="button" aria-label="Turn sound on" aria-pressed="false">
+          <svg class="sound-on" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 10v4h4l5 4V6l-5 4H4Z" />
+            <path d="M16 9c1.2 1.2 1.2 4.8 0 6M18.5 6.5c3 3 3 8 0 11" />
+          </svg>
+          <svg class="sound-off" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 10v4h4l5 4V6l-5 4H4Z" />
+            <path d="m17 10 4 4m0-4-4 4" />
+          </svg>
+          <span class="utility-label">Sound</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="experience" id="main-content" tabindex="-1">
+      <section class="love-card" id="love-card" data-scene="asking">
+        <div class="card-shine" aria-hidden="true"></div>
+        <div class="card-corner card-corner--tl" aria-hidden="true"></div>
+        <div class="card-corner card-corner--tr" aria-hidden="true"></div>
+        <div class="card-corner card-corner--bl" aria-hidden="true"></div>
+        <div class="card-corner card-corner--br" aria-hidden="true"></div>
+
+        <div class="card-topline">
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="status-label">tiny transmission incoming</span>
+          </span>
+          <span class="card-number" aria-hidden="true">№ 0214</span>
+        </div>
+
+        <div class="scene-stage">
+          <section class="scene scene--asking is-active" id="scene-asking" data-scene-panel="asking">
+            <div class="mascot-wrap" id="mascot-wrap">
+              <div class="orbit orbit--one" aria-hidden="true"></div>
+              <div class="orbit orbit--two" aria-hidden="true"></div>
+              <span class="spark spark--one" aria-hidden="true">✦</span>
+              <span class="spark spark--two" aria-hidden="true">✦</span>
+              <span class="spark spark--three" aria-hidden="true">·</span>
+
+              <svg
+                class="mascot"
+                id="mascot"
+                viewBox="0 0 240 210"
+                role="img"
+                aria-label="A hopeful little cloud bear holding a blue heart"
+              >
+                <defs>
+                  <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#ffffff" />
+                    <stop offset="1" stop-color="#d9f2ff" />
+                  </linearGradient>
+                  <linearGradient id="heart" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#77d7ff" />
+                    <stop offset="1" stop-color="#399dff" />
+                  </linearGradient>
+                  <filter id="mascot-shadow" x="-30%" y="-30%" width="160%" height="180%">
+                    <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#2a7ba8" flood-opacity=".24" />
+                  </filter>
+                </defs>
+
+                <g class="mascot__body" filter="url(#mascot-shadow)">
+                  <path
+                    class="mascot__ear mascot__ear--left"
+                    fill="url(#fur)"
+                    stroke="#2f7faa"
+                    stroke-width="5"
+                    d="M54 61c-19-5-26-29-13-42 11-11 33-3 37 17Z"
+                  />
+                  <path
+                    class="mascot__ear mascot__ear--right"
+                    fill="url(#fur)"
+                    stroke="#2f7faa"
+                    stroke-width="5"
+                    d="M162 36c4-20 26-28 37-17 13 13 6 37-13 42Z"
+                  />
+                  <path
+                    fill="#a9ddf7"
+                    d="M48 36c-3-8 2-14 8-13 7 1 11 9 8 16Z"
+                  />
+                  <path
+                    fill="#a9ddf7"
+                    d="M176 39c-3-7 1-15 8-16 6-1 11 5 8 13Z"
+                  />
+                  <path
+                    class="mascot__head"
+                    fill="url(#fur)"
+                    stroke="#2f7faa"
+                    stroke-width="5"
+                    d="M120 24c51 0 82 28 82 71 0 20-8 36-22 47 7 30-17 52-60 52s-67-22-60-52C46 131 38 115 38 95c0-43 31-71 82-71Z"
+                  />
+                  <ellipse class="mascot__blush mascot__blush--left" cx="77" cy="111" rx="14" ry="8" fill="#bde9ff" />
+                  <ellipse class="mascot__blush mascot__blush--right" cx="163" cy="111" rx="14" ry="8" fill="#bde9ff" />
+
+                  <g class="mascot__eyes">
+                    <path class="mascot__eye mascot__eye--left" stroke="#173f5c" stroke-width="7" stroke-linecap="round" d="M83 84v3" />
+                    <path class="mascot__eye mascot__eye--right" stroke="#173f5c" stroke-width="7" stroke-linecap="round" d="M157 84v3" />
+                  </g>
+                  <path class="mascot__brow mascot__brow--left" stroke="#2f7faa" stroke-width="3" stroke-linecap="round" d="m73 70 17-3" />
+                  <path class="mascot__brow mascot__brow--right" stroke="#2f7faa" stroke-width="3" stroke-linecap="round" d="m150 67 17 3" />
+                  <path class="mascot__nose" fill="#173f5c" d="M114 96q6-5 12 0-1 8-6 8t-6-8Z" />
+                  <path class="mascot__mouth" fill="none" stroke="#173f5c" stroke-width="3" stroke-linecap="round" d="M120 104q-8 9-14 2m14-2q8 9 14 2" />
+
+                  <path
+                    class="mascot__heart"
+                    fill="url(#heart)"
+                    stroke="#176fbd"
+                    stroke-width="4"
+                    d="M120 172 86 141c-21-21 9-48 34-22 25-26 55 1 34 22Z"
+                  />
+                  <path class="mascot__heart-shine" fill="none" stroke="#dff8ff" stroke-width="5" stroke-linecap="round" d="M100 128q7-8 15-1" />
+                  <path class="mascot__paw mascot__paw--left" fill="url(#fur)" stroke="#2f7faa" stroke-width="4" d="M66 137q19-16 39 2l-10 25q-22-1-32-15Z" />
+                  <path class="mascot__paw mascot__paw--right" fill="url(#fur)" stroke="#2f7faa" stroke-width="4" d="M174 137q-19-16-39 2l10 25q22-1 32-15Z" />
+                </g>
+              </svg>
+
+              <div class="speech-bubble" id="mascot-thought" aria-hidden="true">
+                <span>you + me?</span>
+              </div>
+            </div>
+
+            <div class="question-copy">
+              <p class="eyebrow">okay, deep breath...</p>
+              <h1 id="question-title">Will you go out <span>with me?</span></h1>
+              <p class="question-subtitle" id="question-subtitle">
+                One tiny date. Infinite main-character energy.
+              </p>
+            </div>
+
+            <div class="answer-zone" id="answer-zone">
+              <button class="answer-button answer-button--yes" id="yes-button" type="button">
+                <span class="button-glint" aria-hidden="true"></span>
+                <span class="button-icon" aria-hidden="true">♥</span>
+                <span class="button-copy">
+                  <strong>YES!</strong>
+                  <small>obviously</small>
+                </span>
+                <span class="button-stars" aria-hidden="true">✦</span>
+              </button>
+
+              <button class="answer-button answer-button--no" id="no-button" type="button">
+                <span class="button-icon button-icon--cloud" aria-hidden="true">☁</span>
+                <span class="button-copy">
+                  <strong id="no-label">NO</strong>
+                  <small id="no-sublabel">be brave</small>
+                </span>
+              </button>
+            </div>
+
+            <div class="response-line" id="response-line" role="status">
+              <span class="response-line__spark" aria-hidden="true">✦</span>
+              <span id="response-copy">The sky is holding its breath...</span>
+              <span class="response-line__spark" aria-hidden="true">✦</span>
+            </div>
+
+            <p class="keyboard-hint" aria-hidden="true">
+              <kbd>Y</kbd> yes <span>·</span> <kbd>N</kbd> not yet
+            </p>
+          </section>
+
+          <section class="scene scene--accepted" id="scene-accepted" data-scene-panel="accepted" hidden>
+            <div class="celebration-icon" aria-hidden="true">
+              <div class="celebration-icon__halo"></div>
+              <div class="celebration-icon__cloud">☁</div>
+              <div class="celebration-icon__heart">♥</div>
+              <span class="celebration-spark celebration-spark--one">✦</span>
+              <span class="celebration-spark celebration-spark--two">✦</span>
+              <span class="celebration-spark celebration-spark--three">✦</span>
+            </div>
+            <p class="eyebrow">plot twist: best timeline unlocked</p>
+            <h1>YAY! Our little sky <span>just got brighter.</span></h1>
+            <p class="scene-copy">
+              Excellent choice. Ten out of ten. The clouds are already gossiping about us.
+            </p>
+            <div class="acceptance-stats" aria-label="Date forecast">
+              <div><strong>100%</strong><span>butterflies</span></div>
+              <i aria-hidden="true"></i>
+              <div><strong>∞</strong><span>cute moments</span></div>
+              <i aria-hidden="true"></i>
+              <div><strong>0%</strong><span>boring plans</span></div>
+            </div>
+            <button class="primary-button" id="plan-button" type="button">
+              <span>Plan our date</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="text-button" id="accepted-replay" type="button">wait, let me enjoy this again</button>
+          </section>
+
+          <section class="scene scene--planner" id="scene-planner" data-scene-panel="planner" hidden>
+            <div class="planner-heading">
+              <div>
+                <p class="eyebrow">mission control</p>
+                <h1>Build our <span>perfect little date.</span></h1>
+              </div>
+              <div class="progress-dots" aria-label="Step 2 of 3"><span class="is-done"></span><span class="is-active"></span><span></span></div>
+            </div>
+
+            <form class="date-form" id="date-form">
+              <div class="form-section">
+                <div class="form-heading">
+                  <label for="date-input">Pick a day</label>
+                  <span>01</span>
+                </div>
+                <div class="date-input-wrap">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" /></svg>
+                  <input id="date-input" name="date" type="date" required />
+                  <span class="field-status" aria-hidden="true">choose wisely ✦</span>
+                </div>
+              </div>
+
+              <fieldset class="form-section">
+                <legend class="fieldset-legend">Choose the vibe</legend>
+                <span class="fieldset-step" aria-hidden="true">02</span>
+                <div class="vibe-grid">
+                  <label class="vibe-option">
+                    <input type="radio" name="vibe" value="Coffee & a long walk" checked />
+                    <span class="vibe-option__icon" aria-hidden="true">☕</span>
+                    <span><strong>Coffee walk</strong><small>cozy + chatty</small></span>
+                    <i aria-hidden="true">✓</i>
+                  </label>
+                  <label class="vibe-option">
+                    <input type="radio" name="vibe" value="Sunset picnic" />
+                    <span class="vibe-option__icon" aria-hidden="true">☀</span>
+                    <span><strong>Sunset picnic</strong><small>snacks + sky</small></span>
+                    <i aria-hidden="true">✓</i>
+                  </label>
+                  <label class="vibe-option">
+                    <input type="radio" name="vibe" value="Arcade adventure" />
+                    <span class="vibe-option__icon" aria-hidden="true">✦</span>
+                    <span><strong>Arcade quest</strong><small>playful + loud</small></span>
+                    <i aria-hidden="true">✓</i>
+                  </label>
+                  <label class="vibe-option">
+                    <input type="radio" name="vibe" value="Mystery date" />
+                    <span class="vibe-option__icon" aria-hidden="true">?</span>
+                    <span><strong>Surprise me</strong><small>dealer's choice</small></span>
+                    <i aria-hidden="true">✓</i>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section form-section--time">
+                <legend class="fieldset-legend">Best time</legend>
+                <span class="fieldset-step" aria-hidden="true">03</span>
+                <div class="time-options">
+                  <label><input type="radio" name="time" value="Late morning" /><span>Late morning</span></label>
+                  <label><input type="radio" name="time" value="Golden hour" checked /><span>Golden hour</span></label>
+                  <label><input type="radio" name="time" value="After dark" /><span>After dark</span></label>
+                </div>
+              </fieldset>
+
+              <button class="primary-button primary-button--full" id="seal-plan-button" type="submit">
+                <span>Seal the plan</span>
+                <span aria-hidden="true">♥</span>
+              </button>
+            </form>
+          </section>
+
+          <section class="scene scene--confirmed" id="scene-confirmed" data-scene-panel="confirmed" hidden>
+            <div class="planner-heading planner-heading--confirmed">
+              <div>
+                <p class="eyebrow">it's officially a date</p>
+                <h1>See you <span>under the blue sky.</span></h1>
+              </div>
+              <div class="progress-dots" aria-label="Step 3 of 3"><span class="is-done"></span><span class="is-done"></span><span class="is-active"></span></div>
+            </div>
+
+            <article class="date-ticket" id="date-ticket" aria-label="Your date plan">
+              <div class="ticket-clouds" aria-hidden="true"><span>☁</span><span>☁</span></div>
+              <div class="ticket-stub">
+                <span>ADMIT TWO</span>
+                <strong>♥</strong>
+                <small>BLUE SKY CLUB</small>
+              </div>
+              <div class="ticket-main">
+                <div class="ticket-label">OUR LITTLE ADVENTURE</div>
+                <h2 id="ticket-vibe">Coffee &amp; a long walk</h2>
+                <dl>
+                  <div><dt>DATE</dt><dd id="ticket-date">To be decided</dd></div>
+                  <div><dt>TIME</dt><dd id="ticket-time">Golden hour</dd></div>
+                  <div><dt>FORECAST</dt><dd>100% chance of butterflies</dd></div>
+                </dl>
+                <div class="ticket-code" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </article>
+
+            <p class="scene-copy scene-copy--compact">
+              Screenshot this, put on your cutest outfit, and meet me in the good timeline.
+            </p>
+
+            <div class="confirmed-actions">
+              <button class="primary-button" id="calendar-button" type="button">
+                <span>Add to calendar</span><span aria-hidden="true">＋</span>
+              </button>
+              <button class="secondary-button" id="copy-button" type="button">
+                <span id="copy-label">Copy plan</span><span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+            <button class="text-button" id="start-over-button" type="button">start a new little adventure</button>
+          </section>
+
+          <section class="scene scene--maybe" id="scene-maybe" data-scene-panel="maybe" hidden>
+            <div class="maybe-icon" aria-hidden="true">☁</div>
+            <p class="eyebrow">no pressure, ever</p>
+            <h1>The invitation can <span>float here awhile.</span></h1>
+            <p class="scene-copy">
+              A real yes should feel easy. Take your time — this tiny cloud will keep it safe.
+            </p>
+            <button class="primary-button" id="maybe-back-button" type="button"><span>Take another look</span><span aria-hidden="true">↺</span></button>
+          </section>
+        </div>
+
+        <footer class="card-footer">
+          <span>made with courage + stardust</span>
+          <span class="footer-heart" aria-hidden="true">♥</span>
+          <button id="card-replay" type="button">replay</button>
+        </footer>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast__icon" aria-hidden="true">✦</span>
+      <span id="toast-copy">Plan copied to your clipboard</span>
+    </div>
+
+    <canvas id="celebration-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-trail" id="cursor-trail" aria-hidden="true"></div>
+
+    <noscript>
+      <div class="noscript-message">This little invitation needs JavaScript for its sparkles and playful choices.</div>
+    </noscript>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
